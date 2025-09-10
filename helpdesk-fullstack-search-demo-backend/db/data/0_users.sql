@@ -1,0 +1,23 @@
+/* Thanks GPT :) */
+INSERT INTO USERS (email, name) VALUES
+                                    ('nicolayr22@gmail.com', 'Nico Layr'),
+                                    ('alice.smith@example.com', 'Alice Smith'),
+                                    ('bob.johnson@example.com', 'Bob Johnson'),
+                                    ('carol.lee@example.net', 'Carol Lee'),
+                                    ('daniel.kim@example.org', 'Daniel Kim'),
+                                    ('eva.martin@example.com', 'Eva Martin'),
+                                    ('frank.miller@example.net', 'Frank Miller'),
+                                    ('grace.choi@example.org', 'Grace Choi'),
+                                    ('henry.baker@example.com', 'Henry Baker'),
+                                    ('irene.wu@example.net', 'Irene Wu'),
+                                    ('jack.nguyen@example.org', 'Jack Nguyen'),
+                                    ('karen.garcia@example.com', 'Karen Garcia'),
+                                    ('liam.owens@example.net', 'Liam Owens'),
+                                    ('mia.rodriguez@example.org', 'Mia Rodriguez'),
+                                    ('noah.patel@example.com', 'Noah Patel'),
+                                    ('olivia.brown@example.net', 'Olivia Brown'),
+                                    ('peter.schultz@example.org', 'Peter Schultz'),
+                                    ('quinn.davies@example.com', 'Quinn Davies'),
+                                    ('rachel.stein@example.net', 'Rachel Stein'),
+                                    ('samuel.jones@example.org', 'Samuel Jones'),
+                                    ('tina.park@example.com', 'Tina Park');
