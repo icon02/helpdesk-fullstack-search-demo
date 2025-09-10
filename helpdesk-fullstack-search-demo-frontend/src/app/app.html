@@ -1,0 +1,34 @@
+<header>
+  <a routerLink="/">
+    <h1>Helpdesk Demo</h1>
+  </a>
+
+  @if ($user(); as user) {
+
+    <ul class="navigation-group">
+      <li>
+        <a routerLink="/users">Users</a>
+      </li>
+      <li>
+        <a routerLink="/articles">Articles</a>
+      </li>
+      <li>
+        <a routerLink="/tickets">Tickets</a>
+      </li>
+      <li>
+        <a routerLink="/search">Search</a>
+      </li>
+    </ul>
+
+    <a routerLink="/profile" class="profile-link">
+      <div class="fake-profile-img"></div>
+      <span>{{ user.name }}</span>
+    </a>
+  }
+
+</header>
+
+
+<main>
+  <router-outlet />
+</main>

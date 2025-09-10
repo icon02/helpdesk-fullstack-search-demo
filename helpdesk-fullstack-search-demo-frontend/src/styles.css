@@ -1,0 +1,77 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+.visually-hidden, .visually-hidden-focusable:not(:focus):not(:focus-within) {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+th {
+  width: fit-content;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+ul.tag-list > .tag,
+ol.tag-list > .tag {
+  display: inline-block;
+}
+
+ul.tag-list > .tag:not(:last-child),
+ol.tag-list > .tag:not(:last-child) {
+  margin-right: 1rem;
+}
+
+
+.tag {
+  display: block;
+  padding: 0.4rem;
+  background: lightyellow;
+  border: 1px solid lightgray;
+  border-radius: 0.4rem;
+  text-align: center;
+  width: fit-content;
+}
+
+button.delete {
+  border-color: #f44336;
+  color: #f44336;
+}
+
+button.reset {
+  -webkit-appearance: none;
+  border-radius: 0;
+  text-align: inherit;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font: inherit;
+  height: fit-content;
+  width: fit-content;
+}
+
+textarea {
+  field-sizing: content;
+  resize: vertical;
+}

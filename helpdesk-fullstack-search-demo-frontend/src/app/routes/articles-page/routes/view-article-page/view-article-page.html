@@ -1,0 +1,5 @@
+@if ($article(); as article) {
+  <app-article-ui [article]="article" />
+}
+
+<a class="button" routerLink="/edit" [relativeTo]="activatedRoute">Edit</a>

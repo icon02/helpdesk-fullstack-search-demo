@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.heading-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+td:last-child:not(:only-child) {
+  border-left: 1px solid lightgray;
+}
+
+
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.action-list {
+  text-align: right;
+}
+
+.tag:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+td.title {
+  width: fit-content;
+}
+
+td .body {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

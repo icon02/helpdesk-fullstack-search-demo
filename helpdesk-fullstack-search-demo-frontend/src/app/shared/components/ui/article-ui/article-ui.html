@@ -1,0 +1,21 @@
+<div [lang]="$article().language">
+  <h2>
+    <small lang="en-GB">Article</small>
+    <br>
+    {{ $article().title }}
+  </h2>
+
+  @if($article().tags.length) {
+    <ul class="tag-list">
+      @for(tag of $article().tags; track tag.id) {
+        <li class="tag" [lang]="tag.language">
+          {{ tag.name }}
+        </li>
+      }
+    </ul>
+  }
+
+  @for (paragraph of $bodyParagraphs(); track paragraph) {
+    <p>{{ paragraph }}</p>
+  }
+</div>

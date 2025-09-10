@@ -1,0 +1,5 @@
+@if ($ticket(); as ticket) {
+  <app-ticket-ui [ticket]="ticket" />
+  <a class="button" routerLink="edit" [relativeTo]="activatedRoute">Edit</a>
+}
+

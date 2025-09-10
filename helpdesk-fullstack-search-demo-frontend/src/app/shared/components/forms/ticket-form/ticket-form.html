@@ -1,0 +1,25 @@
+<app-form-language-wrapper
+    [rootFormGroup]="form"
+    [languageControl]="languageCtrl"
+    [readonly]="$readonly()">
+    <ng-container slot="entityName">
+      <ng-content select="[slot='entityName']" />
+    </ng-container>
+
+  <label>
+    Title
+    <input type="text" maxlength="127" [formControl]="titleCtrl" [readonly]="$readonly()">
+  </label>
+
+  <label>
+    Description
+    <textarea [formControl]="descriptionCtrl" [readonly]="$readonly()"></textarea>
+  </label>
+
+  <label>
+    Tags
+    <app-tags-form [formControl]="tagsCtrl" [readonly]="$readonly()" />
+  </label>
+
+  <ng-content />
+</app-form-language-wrapper>

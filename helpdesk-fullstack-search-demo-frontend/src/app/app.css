@@ -1,0 +1,73 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  width: 100dvw;
+  height: 100dvh;
+
+  overflow: hidden;
+}
+
+header {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: calc(100dvw - 2rem); /* - padding */
+
+  padding: 1rem;
+
+  border-bottom: 1px solid lightgray;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+ul.navigation-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.navigation-group li {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.navigation-group li:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.fake-profile-img {
+  background-color: lightblue;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid lightgray;
+}
+
+.profile-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+main {
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: calc(100dvw - 2rem);
+
+  margin: 1rem;
+
+  overflow: auto;
+}

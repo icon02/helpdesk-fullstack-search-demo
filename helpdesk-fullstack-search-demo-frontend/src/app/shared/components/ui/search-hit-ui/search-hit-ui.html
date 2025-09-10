@@ -1,0 +1,16 @@
+<div class="flex-top-row">
+  <a [routerLink]="$hit().url">
+    <h5 style="margin: 0;">{{ $hit().title }}</h5>
+  </a>
+
+  <app-language-tag-ui [tagValue]="$hit().language" />
+</div>
+
+<label>
+  Suits your search:
+  <progress [max]="1.0" [value]="$hit().score">
+    {{ $hit().score * 100 }}%
+  </progress>
+</label>
+<h6 lang="en-GB" class="visually-hidden">Found in search snippet</h6>
+<p [innerHTML]="$hit().snippet"></p>

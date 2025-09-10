@@ -1,0 +1,24 @@
+<form>
+  @if (!$readonly()) {
+    <label>
+      <div class="visually-hidden">Add Tag</div>
+      <input
+        type="text"
+        [(ngModel)]="$inputString"
+        name="tagString"
+        (keydown.enter)="addTag($event)"
+        (keydown.space)="addTag($event)">
+    </label>
+  }
+
+  <ul class="tag-list">
+    @for (tag of $value(); track tag.name) {
+      <li class="tag" (click)="deleteTag(tag.name)">
+        {{ tag.name }}
+        @if (!$readonly() && !$isDisabled()) {
+          <button class="reset" (click)="deleteTag(tag.name)">x</button>
+        }
+      </li>
+    }
+  </ul>
+</form>

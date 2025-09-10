@@ -1,0 +1,30 @@
+<form>
+  <label>
+    <h2>Search</h2>
+    <input type="text" [formControl]="searchInput">
+  </label>
+
+  <button type="submit" (click)="submit()">Search</button>
+</form>
+
+@if ($term()) {
+  <h3>Results</h3>
+
+  @if ($searchResult().length) {
+    <ol>
+      @for (hit of $searchResult(); track hit) {
+        <li class="hit">
+          <app-search-hit-ui [hit]="hit" />
+        </li>
+      }
+    </ol>
+  } @else {
+    <p>Keine Einträge gefunden</p>
+  }
+}
+
+@if ($term() !== null) {
+
+}
+
+

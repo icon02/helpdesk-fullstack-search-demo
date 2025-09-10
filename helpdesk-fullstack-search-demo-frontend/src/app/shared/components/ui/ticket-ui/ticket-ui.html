@@ -1,0 +1,16 @@
+<div [lang]="$ticket().language">
+  <h2>
+    <small lang="en-GB">Ticket</small>
+    <br>
+    {{ $ticket().title }}
+  </h2>
+
+  <ul class="tag-list">
+    @for (tag of $ticket().tags; track tag.id) {
+      <li class="tag" [lang]="tag.language">{{ tag.name }}</li>
+    }
+  </ul>
+
+  <p>{{ $ticket().description }}</p>
+</div>
+

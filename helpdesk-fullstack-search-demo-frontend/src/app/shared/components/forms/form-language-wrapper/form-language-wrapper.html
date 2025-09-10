@@ -1,0 +1,21 @@
+<form [formGroup]="$rootFormGroup()" [lang]="$languageControl().value">
+  <div class="top-row">
+    <ng-content select="[slot='entityName']" />
+
+    <small>
+      <label>
+        <span class="visually-hidden">Language</span>
+        @if ($readonly()) {
+          <input type="text" readonly="readonly" [value]="$languageControl().value" style="width: 8rem">
+        } @else {
+          <select [formControl]="$languageControl()" style="width: 8rem">
+            <option>de-AT</option>
+            <option>en-GB</option>
+          </select>
+        }
+      </label>
+    </small>
+  </div>
+
+  <ng-content />
+</form>

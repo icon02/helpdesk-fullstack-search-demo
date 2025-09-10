@@ -1,0 +1,66 @@
+<div class="heading-row">
+  <h2>Articles</h2>
+  <a class="button button-primary" routerLink="new">New</a>
+</div>
+
+<table>
+  <thead>
+  <tr lang="en-GB">
+    <th>Id</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Tags</th>
+    <th>Updated At</th>
+    <th>Updated By</th>
+    <th><div class="visually-hidden">Actions</div></th>
+  </tr>
+  </thead>
+  <tbody>
+  @for(page of $articlePages(); track '' + page.page.number + '' + page.page.size) {
+    @for(article of page._embedded.articleList; track article.id) {
+      <tr [lang]="article.language">
+        <td>{{ article.id }}</td>
+        <td class="title">{{ article.title }}</td>
+        <td>
+          <div class="body">{{ article.body }}</div>
+        </td>
+        <td>
+          @if (article.tags.length) {
+            <ul class="tag-list">
+              @for(tag of article.tags; track tag.id) {
+                <li [lang]="tag.language" class="tag">{{ tag.name }}</li>
+              }
+            </ul>
+          }
+        </td>
+        <td>{{ article.updatedAt | date: 'dd.MM.yyyy hh:mm' }}
+        <td>{{ article.updatedBy?.name }}</td>
+        <td>
+          <ul class="action-list">
+            <li>
+              <a [routerLink]="[article.id]" [relativeTo]="activatedRoute" class="button">View</a>
+            </li>
+            <li>
+              <a [routerLink]="[article.id, 'edit']" [relativeTo]="activatedRoute" class="button">Edit</a>
+            </li>
+            <li>
+              <button type="button" class="delete" (click)="deleteEntry(article)">Delete</button>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    }
+    <tr>
+      <td colspan="10">
+        Page {{ page.page.number + 1 }} of {{ page.page.totalPages }}
+      </td>
+    </tr>
+  }
+  </tbody>
+</table>
+
+@if($articlePages().length && $articlePages()[$articlePages().length - 1].page.number < ($articlePages()[0].page.totalPages)) {
+  <button type="button" (click)="loadNextPage()">
+    <small>Load more</small>
+  </button>
+}

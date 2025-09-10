@@ -1,0 +1,12 @@
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.flex-top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
